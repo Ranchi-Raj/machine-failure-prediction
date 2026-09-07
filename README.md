@@ -129,21 +129,21 @@ Failure Prediction
 
 ### Machine Failure Distribution
 
-![Machine Failure Distribution](figures/target_distribution.png)
+![Machine Failure Distribution](Outputs/target_distribution.png)
 
 The target is imbalanced: machine failures are much less frequent than normal observations. Therefore, accuracy alone is not sufficient for judging the model.
 
 ### Failure Rate by Product Type
 
-![Failure Rate by Product Type](figures/failure_rate_by_type.png)
+![Failure Rate by Product Type](Ouputs/failure_rate_by_type.png)
 
 ### Correlation Analysis
 
-![Correlation Heatmap](figures/correlation_heatmap.png)
+![Correlation Heatmap](Outputs/correlation_heatmap.png)
 
 ### Tool Wear Analysis
 
-![Tool Wear Distribution](figures/tool_wear_distribution.png)
+![Tool Wear Distribution](Outputs/tool_wear_distribution.png)
 
 ---
 
@@ -183,7 +183,7 @@ Temperature Difference × Tool Wear
 
 This combines thermal conditions with accumulated tool wear.
 
-![Engineered Features](figures/engineered_features.png)
+![Engineered Features](Outputs/engineered_features.png)
 
 ---
 
@@ -253,7 +253,7 @@ The final evaluation shown in the notebook gives:
 
 ### Confusion Matrix
 
-![Confusion Matrix](figures/confusion_matrix.png)
+![Confusion Matrix](Outputs/confusion_matrix.png)
 
 The final confusion matrix is:
 
@@ -273,13 +273,13 @@ For predictive maintenance, **false negatives are particularly important**, beca
 
 ### Normalized Confusion Matrix
 
-![Normalized Confusion Matrix](figures/normalized_confusion_matrix.png)
+![Normalized Confusion Matrix](Outputs/normalized_confusion_matrix.png)
 
 ---
 
 ## ROC Curve
 
-![ROC Curve](figures/roc_curve.png)
+![ROC Curve](Outputs/roc_curve.png)
 
 The ROC curve evaluates the model across different classification thresholds.
 
@@ -289,7 +289,7 @@ The ROC curve evaluates the model across different classification thresholds.
 
 ## Precision-Recall Curve
 
-![Precision-Recall Curve](figures/precision_recall_curve.png)
+![Precision-Recall Curve](Outputs/precision_recall_curve.png)
 
 Because machine failure is the minority class, the Precision-Recall curve is especially useful for understanding failure detection performance.
 
@@ -301,7 +301,7 @@ Because machine failure is the minority class, the Precision-Recall curve is esp
 
 The model produces a probability of failure rather than only a hard `0/1` prediction.
 
-![Probability Distribution](figures/probability_distribution.png)
+![Probability Distribution](Outputs/probability_distribution.png)
 
 A default threshold of `0.50` converts probabilities into classes:
 
@@ -312,7 +312,7 @@ Probability <  0.50 → No Failure
 
 The notebook also investigates how changing this threshold affects precision, recall and F1.
 
-![Threshold Analysis](figures/threshold_analysis.png)
+![Threshold Analysis](Outputs/threshold_analysis.png)
 
 > The threshold analysis is intended to understand model behavior. For a strictly unbiased final evaluation, the operating threshold should be selected using validation data/CV and then applied once to the untouched test set.
 
@@ -320,7 +320,7 @@ The notebook also investigates how changing this threshold affects precision, re
 
 ## Feature Importance
 
-![Feature Importance](figures/feature_importance.png)
+![Feature Importance](Outputs/feature_importance.png)
 
 Feature importance provides an indication of which transformed input features XGBoost relied on most strongly.
 
@@ -397,32 +397,6 @@ Open:
 ```text
 Aditya_Machine_Failure.ipynb
 ```
-
----
-
-## Project Scope
-
-This repository intentionally focuses on the machine learning analysis and evaluation pipeline.
-
-It does **not** include:
-
-- Flask API
-- Model serialization
-- Frontend
-- Docker deployment
-- Extra Trees
-- HistGradientBoosting
-
-The goal is to keep the project focused, understandable and reproducible.
-
----
-
-## Author
-
-**Aditya Raj**  
-IIT Bhubaneswar
-
----
 
 ## License / Dataset Attribution
 
